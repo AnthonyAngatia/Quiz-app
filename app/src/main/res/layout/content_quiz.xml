@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/nav_host_fragment"-->
+    <!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:defaultNavHost="true"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:navGraph="@navigation/nav_graph2" />-->
+    <TextView
+        android:id="@+id/text_question_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="8dp"
+        android:text="1"
+        android:textColor="@color/colorIconText"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorAccent"
+        android:padding="8dp"
+        android:progressBackgroundTint="@color/colorPrimaryDark"
+        android:progressTint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="@+id/text_timer"
+        app:layout_constraintEnd_toStartOf="@+id/text_timer"
+        app:layout_constraintStart_toEndOf="@+id/text_question_number"
+        app:layout_constraintTop_toTopOf="@+id/text_question_number" />
+
+    <TextView
+        android:id="@+id/text_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="8dp"
+        android:text="60"
+        android:textColor="@color/colorIconText"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/inner_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_question"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_mono_light"
+                android:padding="8dp"
+                android:text="What does the term pipe mean"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_choice1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorIconText"
+                android:backgroundTint="@color/colorLightPrimary"
+                android:fontFamily="@font/roboto_mono_light"
+                android:onClick="btnClick"
+                android:text="Choice 1"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/secondaryText"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_question" />
+
+            <Button
+                android:id="@+id/btn_choice2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorIconText"
+                android:backgroundTint="@color/colorLightPrimary"
+                android:fontFamily="@font/roboto_mono_light"
+                android:onClick="btnClick"
+                android:text="Choice 2"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/secondaryText"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_choice1" />
+
+            <Button
+                android:id="@+id/btn_choice3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorIconText"
+                android:backgroundTint="@color/colorLightPrimary"
+                android:fontFamily="@font/roboto_mono_light"
+                android:onClick="btnClick"
+                android:text="Choice 3"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/secondaryText"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_choice2" />
+
+            <Button
+                android:id="@+id/btn_choice4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorIconText"
+                android:backgroundTint="@color/colorLightPrimary"
+                android:fontFamily="@font/roboto_mono_light"
+                android:onClick="btnClick"
+                android:text="Choice 4"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/secondaryText"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_choice3" />
+
+            <Button
+                android:id="@+id/btn_next_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="24dp"
+                android:text="Next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.86"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_choice4" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+<!--    &lt;!&ndash;    <fragment&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/nav_host_fragment"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:name="androidx.navigation.fragment.NavHostFragment"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="0dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="0dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:defaultNavHost="true"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintLeft_toLeftOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintRight_toRightOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:navGraph="@navigation/nav_graph2" />&ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/text_question_number"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/colorAccent"-->
+<!--        android:padding="16dp"-->
+<!--        android:text="1"-->
+<!--        android:textColor="@color/colorIconText"-->
+<!--        android:textSize="36sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressBar"-->
+<!--        style="?android:attr/progressBarStyleHorizontal"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="79dp"-->
+<!--        android:background="@color/colorAccent"-->
+<!--        android:padding="16dp"-->
+<!--        android:progressBackgroundTint="@color/colorPrimaryDark"-->
+<!--        android:progressTint="@color/colorPrimaryDark"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/text_question_number"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/text_timer"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/text_question_number"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/text_timer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/colorAccent"-->
+<!--        android:padding="16dp"-->
+<!--        android:text="60"-->
+<!--        android:textColor="@color/colorIconText"-->
+<!--        android:textSize="36sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/text_question"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:fontFamily="@font/roboto_mono_light"-->
+<!--        android:padding="16dp"-->
+<!--        android:text="What does the term pipe mean"-->
+<!--        android:textSize="24sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/progressBar" />-->
+
+
+<!--   -->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_choice1"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:background="@color/colorIconText"-->
+<!--        android:backgroundTint="@color/colorLightPrimary"-->
+<!--        android:fontFamily="@font/roboto_mono_light"-->
+<!--        android:text="Choice 1"-->
+<!--        android:onClick="btnClick"-->
+<!--        android:textAlignment="textStart"-->
+<!--        android:textColor="@color/secondaryText"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/text_question" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_choice2"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="@color/colorIconText"-->
+<!--        android:backgroundTint="@color/colorLightPrimary"-->
+<!--        android:fontFamily="@font/roboto_mono_light"-->
+<!--        android:text="Choice 2"-->
+<!--        android:onClick="btnClick"-->
+<!--        android:textAlignment="textStart"-->
+<!--        android:textColor="@color/secondaryText"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/btn_choice1"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/btn_choice1"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_choice1" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_choice3"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="@color/colorIconText"-->
+<!--        android:backgroundTint="@color/colorLightPrimary"-->
+<!--        android:fontFamily="@font/roboto_mono_light"-->
+<!--        android:text="Choice 3"-->
+<!--        android:onClick="btnClick"-->
+<!--        android:textAlignment="textStart"-->
+<!--        android:textColor="@color/secondaryText"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/btn_choice2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/btn_choice2"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_choice2" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_choice4"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="@color/colorIconText"-->
+<!--        android:backgroundTint="@color/colorLightPrimary"-->
+<!--        android:fontFamily="@font/roboto_mono_light"-->
+<!--        android:text="Choice 4"-->
+<!--        android:onClick="btnClick"-->
+<!--        android:textAlignment="textStart"-->
+<!--        android:textColor="@color/secondaryText"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/btn_choice3"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/btn_choice3"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_choice3" />-->
+<!--    -->
+<!--    <Button-->
+<!--        android:id="@+id/btn_next_finish"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:text="Next"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.86"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_choice4" />-->
+
+<!--   -->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
